@@ -10,3 +10,8 @@ set splitbelow          "To open new screen below current using :split or :new
 set number              "Display line numbers
 set ruler               "Show line and column number of the cursor position
 filetype plugin indent on "Enable file-type related settings.
+
+nnoremap <F4> :put =strftime('# %d/%m/%Y ')<CR>A
+inoremap <F4> <ESC>:put =strftime('# %d/%m/%Y ')<CR>A
+
+nnoremap <leader>lo :w !pandoc --filter test.py  -o %:r.pdf<CR>:!open %:r.pdf<CR><CR>
