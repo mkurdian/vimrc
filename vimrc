@@ -18,3 +18,8 @@ nnoremap <leader>lo :w !pandoc -o %:r.pdf<CR>:!open %:r.pdf<CR><CR>
 
 command! -nargs=1 -complete=file -bar Compile :w !python filter.py <args> | pandoc -o %:r.pdf && open %:r.pdf
 nnoremap <leader>lc :Compile<space>
+
+"Common typos
+command! Wq wq
+command! WQ wq
+command! Q q
