@@ -14,13 +14,16 @@ filetype plugin indent on "Enable file-type related settings.
 nnoremap <F4> :put =strftime('# %d/%m/%Y ')<CR>A
 inoremap <F4> <ESC>:put =strftime('# %d/%m/%Y ')<CR>A
 
-nnoremap <leader>lo :w !pandoc -o %:r.pdf<CR>:!open %:r.pdf<CR><CR>
-
 command! -nargs=1 -complete=file -bar Compile :w !python filter.py <args> | pandoc -o %:r.pdf && open %:r.pdf
 nnoremap <leader>lc :Compile<space>
+nnoremap <leader>lo :w !pandoc -o %:r.pdf<CR>:!open %:r.pdf<CR><CR>
 
 "Common typos
 command! Wq wq
 command! WQ wq
 command! Q q
 command! W w
+
+"Create tags file for tag jumping using ^x]
+"Make sure ctags is installed.
+command! Maketags !ctags -R .
