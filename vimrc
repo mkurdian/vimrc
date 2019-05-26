@@ -23,3 +23,4 @@ nnoremap <leader>lc :Compile<space>
 command! Wq wq
 command! WQ wq
 command! Q q
+command! W w
