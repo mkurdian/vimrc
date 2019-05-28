@@ -9,6 +9,7 @@ set splitright          "To open new screen on the right using :vsplit or :vnew
 set splitbelow          "To open new screen below current using :split or :new
 set number              "Display line numbers
 set ruler               "Show line and column number of the cursor position
+set colorcolumn=120      "Display colum of maximum recommended line length
 filetype plugin indent on "Enable file-type related settings.
 
 nnoremap <F4> :put =strftime('# %d/%m/%Y ')<CR>A
