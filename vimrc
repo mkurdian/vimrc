@@ -15,7 +15,7 @@ filetype plugin indent on "Enable file-type related settings.
 nnoremap <F4> :put =strftime('# %d/%m/%Y ')<CR>A
 inoremap <F4> <ESC>:put =strftime('# %d/%m/%Y ')<CR>A
 
-command! -nargs=1 -complete=file -bar Compile :w !python3 filter.py <args> | pandoc -o %:r.pdf && open %:r.pdf
+command! -nargs=1 -complete=file -bar Compile :w !python3 filter.py <args> | pandoc -o <args>.pdf && open <args>.pdf
 nnoremap <leader>lc :Compile<space>
 nnoremap <leader>lo :w !pandoc -o %:r.pdf<CR>:!open %:r.pdf<CR><CR>
 
