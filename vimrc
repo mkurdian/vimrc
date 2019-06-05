@@ -13,8 +13,8 @@ set colorcolumn=120     "Display colum of maximum recommended line length
 set textwidth=120       "Automatically start a new line when line length exceeds this limit
 filetype plugin indent on "Enable file-type related settings.
 
-nnoremap <F4> o<ESC>:put =strftime('# %d/%m/%Y ')<CR>A
-inoremap <F4> <ESC>o<ESC>:put =strftime('# %d/%m/%Y ')<CR>A
+nnoremap <F4> Go<ESC>:put =strftime('# %d/%m/%Y ')<CR>A
+inoremap <F4> <ESC>Go<ESC>:put =strftime('# %d/%m/%Y ')<CR>A
 
 command! -nargs=1 -complete=file -bar Compile :w !python3 filter.py <args> | pandoc -V geometry:margin=2cm -o %:r.pdf && open %:r.pdf
 nnoremap <leader>lc :Compile<space>
