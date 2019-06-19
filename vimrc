@@ -11,6 +11,7 @@ set number              "Display line numbers
 set ruler               "Show line and column number of the cursor position
 set colorcolumn=120     "Display colum of maximum recommended line length
 set textwidth=120       "Automatically start a new line when line length exceeds this limit
+set autowrite
 filetype plugin indent on "Enable file-type related settings.
 
 nnoremap <F4> Go<ESC>:put =strftime('# %d/%m/%Y ')<CR>A
@@ -29,3 +30,7 @@ command! W w
 "Create tags file for tag jumping using ^x]
 "Make sure ctags is installed.
 command! Maketags !ctags -R .
+
+nnoremap <F5> :w<CR> :!pytest<CR>
+inoremap <F5> <ESC> :w<CR> :!pytest<CR>
+
